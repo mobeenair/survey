@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	<style>
+	body
+	{
+		background-color: #A2C2BD;
+		font-family: helvetica, san-serif;
+		font-size: 17px;
+		text-align: center;
+	}
+	h1
+	{
+		color: #3E3E3F;
+		font-weight: bold;
+	}
+		#outer-form
+		{
+			background-color: #DADADA;
+			width: 75%;
+			margin: auto;
+			border-radius: 5px;
+			padding: 10px;
+		}
+		.label
+		{
+			display: inline-block;
+			text-align: right;
+			width: 40%;
+			vertical-align: top;
+			padding: 10px;
+			margin-top: 10px;
+		}
+
+		.radio, .checkbox 
+		{
+		  	position: relative;
+		  	left: -43px;
+		   	margin-left: 10px;
+		  	display: block;
+		  	padding-bottom: 10px;
+		}
+
+
+		.rightTab
+		{
+			display: inline-block;
+			text-align: left;
+			width: 40%;
+
+		}
+		.input-field
+		{
+			height: 20px;
+			width: 280px;
+			padding: 5px;
+			margin: 10px;
+			border: 1px solid #c0c0c0;
+			border-radius: 2px;
+		}
+
+		.dropdown 
+		{
+		  	height: 35px;
+		  	width: 140px;
+		  	padding: 5px;
+		  	margin: 10px;  
+		  	margin-top: 15px;
+		  	border: 1px solid #c0c0c0;
+		  	border-radius: 2px;
+		}
+
+		.commentBox
+		{
+			height:50px;
+			resize:vertical;
+		}
+
+		#submit 
+		{
+		  	background-color: #5EABCF;
+		  	border-radius: 4px;
+		  	color: white;
+		  	font-size: 1em;
+		  	height: 40px;
+		  	width: 96px;
+		  	margin: 10px;
+		  	border: 0px solid;
+		}
+
+
+		@media screen and (max-width: 833px) 
+		{
+		  	.input-field {
+		    width: 80%;
+		  }
+		  	select {
+		    width: 90%;
+		  }
+		}
+
+		@media screen and (max-width: 520px) 
+		{
+  			.labels {
+		    width: 100%;
+		    text-align: left;
+			}
+		  	.rightTab {
+		    width: 80%;
+		    float: left;
+		  	}
+  			.input-field {
+    		width: 50%;
+  			}
+		  	select {
+		    width: 100%;
+		  	}
+		}
+	</style>
+</head>
+<body>
+	<h1 id="title">Survey Form</h1>
+	<div id="outer-form">
+		<p id="description">Let us know how we can improve freeCodeCamp</p>
+		<form id="survey-form">
+			<div class="label">
+				<label id="name-label" for="name">* Name:</label>
+			</div>
+			<div class="rightTab">
+				<input type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required>
+			</div>
+
+			<div class="label">
+				<label id="email-label" for="email">* Email:
+				</label>
+			</div>
+			<div class="rightTab">
+				<input type="email" name="email" id="email" class="input-field" placeholder="Enter your Email" required>
+			</div>
+
+			<div class="label">
+				<label id="age-label" for="age">* Age:</label>
+			</div>
+			<div class="rightTab">
+				<input type="number" name="age" id="number" min="1" max="110" class="input-field" placeholder="Age" required>
+			</div>
+
+			<div class="label">
+				<label for="currentPos">Which option best describe your current role?</label>
+			</div>
+			<div class="rightTab">
+				<select id="dropdown" name="currentPos" class="dropdown">
+					<option disabled value>Select an option</option>
+					<option value="student">Student</option>
+					<option value="job">Full time job</option>
+					<option value="preferNo">Prefer not to say</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+
+			<div class="label">
+				<label for="userRating">* How likely is that you would recommend freeCodeCamp to a friend?</label>
+			</div>
+			<div class="rightTab">
+				<ul style="list-style: none;">
+					<li class="radio"><label><input name="radio-buttons" value="1"  type="radio" class="userRatings" >Definitely</label></li>
+					<li class="radio"><label><input name="radio-buttons" value="2"  type="radio" class="userRatings" >Maybe</label></li>
+					<li class="radio"><label><input name="radio-buttons" value="3"  type="radio" class="userRatings" >Not Sure</label></li>
+				</ul>
+			</div>
+
+			<div class="label">
+				<label for="mostLike">What do you like most in FCC?</label>
+			</div>
+			<div class="rightTab">
+				<select id="dropdown" name="mostLike" class="dropdown">
+					<option disabled value>Select an option</option>
+					<option value="challenges">Challenges</option>
+					<option value="projects">Projects</option>
+					<option value="community">Community</option>
+					<option value="openSource">Open Source</option>
+				</select>
+			</div>
+
+			<div class="label">
+	        <label for="preferences">Things that should be improved in the future<br>(Check all that apply): </label>
+	        </div>
+	      	<div class="rightTab">
+	      		<ul style="list-style: none;">
+					<li class="checkbox"><label><input name="prefer" value="1"  type="checkbox" class="userRatings" >Front-end Projects</label></li>
+					<li class="checkbox"><label><input name="prefer" value="2"  type="checkbox" class="userRatings" >Back-end Projects</label></li>
+					<li class="checkbox"><label><input name="prefer" value="3"  type="checkbox" class="userRatings" >Data Visualization</label></li>
+					<li class="checkbox"><label><input name="prefer" value="4"  type="checkbox" class="userRatings" >Challenges</label></li>
+					<li class="checkbox"><label><input name="prefer" value="5"  type="checkbox" class="userRatings" >Gitter help rooms</label></li>
+					<li class="checkbox"><label><input name="prefer" value="6"  type="checkbox" class="userRatings" >Videos</label></li>
+					<li class="checkbox"><label><input name="prefer" value="7"  type="checkbox" class="userRatings" >City Meetups</label></li>
+					<li class="checkbox"><label><input name="prefer" value="8"  type="checkbox" class="userRatings" >Additional Courses</label></li>				
+					</ul>
+
+	      	</div>
+	      	<div class="label">
+	      		<label for="comments">Any comments or suggestions?</label>
+	      	</div>
+	      	<div class="rightTab">
+	      		<textarea id="comments" class="input-field commentBox" placeholder="Enter your comments here..."></textarea>
+	      	</div>
+	      	<button id="submit" type="submit">Submit</button>
+		</form>
+	</div>
+</body>
+
+</html>
